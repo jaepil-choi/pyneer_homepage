@@ -5,10 +5,9 @@ var bFixed = false;
 
 
 
-
-
-
-
+$('.arrow-up').click(function(event){
+   $('html,body').animate({scrollTop:0},300);
+});
 
 $(window).scroll( function() {
     var currPos = $(window).scrollTop(); 
@@ -38,31 +37,21 @@ $header.find('a').click( function(event) {
         $('html, body').animate({ scrollTop: 0 },700); 
     }
     else{ 
-        $('html, body').animate({ scrollTop: target+(gap/2)},700); 
+        $('html, body').animate({ scrollTop: target+(gap*1.5)},700); 
     }
 });
 
-$('.gototop').click(function(){
-   $('html, body').animate({scrollTop:0},700); 
-});
 /* Card animation for mobile page */ 
 $('.section.intro').on('click', function () {
     $('.card').toggleClass('flipped');
 
 });
 /* project popup */
-
-
-$('.circle').hover(
-    function(){
+$('.circle').on('click', function(){
+    $('.circle>.desc').css('display', 'none');
     $(this).children('.desc').css('display', 'block');
-},
-    function(){
-    $(this).children('.desc').css('display', 'none');
-}
-                  
-                  
-                  );
+});
+
 /* Header animation */
 (function() {
     // strict mode
@@ -81,9 +70,9 @@ $('.circle').hover(
             // base color
             color: "black",
             // number of particles to render onto stage
-            count: 30,
+            count: 20,
             // size of particle influence when drawing connectors (in pixels)
-            influence: 100,
+            influence: 300,
             // a range of sizes for an individual particle (falls within max-min)
             sizeRange: {
                 min: 10,
@@ -92,7 +81,7 @@ $('.circle').hover(
             // a range of velocities for each particle to inherit (falls within max-min)
             velocityRange: {
                 min: 10,
-                max: 100
+                max: 300
             }
         }
     },
@@ -141,7 +130,7 @@ $('.circle').hover(
     function renderFPS(value) {
         context.save();
         context.font = 10 * stage.pixelRatio + "px sans-serif";
-        context.fillStyle = "#333";
+        context.fillStyle = "#000";
         context.textBaseline = "top";
         context.fillText(value, 5 * stage.pixelRatio, 5 * stage.pixelRatio);
         context.restore();
@@ -186,7 +175,6 @@ $('.circle').hover(
                 ctx.beginPath();
                 ctx.arc(x || 10, y || 10, r, 0, 8);
                 ctx.stroke();
-                
             },
             // sets the position of this particle compared to its previous position
             // in relation to a total time delta since last positioning
