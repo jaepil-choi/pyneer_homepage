@@ -12,18 +12,23 @@ class IndexView(generic.ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-        return Project.objects.order_by('-project_date')
+        return Project.objects.order_by('project_date')
 
     def get_context_data(self, **kwargs):
-        et = super(IndexView, self).get_context_data(**kwargs)
+        # et = super(IndexView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
-        projects = Project.objects.order_by('-project_date')
-        for y in range(projects.first().project_date.year, projects.last().project_date.year + 1):
-            et["projects_{0}".format(y)] = projects.filter(project_date__year=y)
+        projects = Project.objects.order_by('project_date')
+
+        context['years'] = [x for x in range(projects.first().project_date.year, projects.last().project_date.year + 1)][::-1]
+        # for y in range(projects.first().project_date.year, projects.last().project_date.year + 1):
+        #     context['project_{0}'.format(y)] = projects.filter(project_date__year=y)
+            # context['years'] = context['years'].append(y)
+        # for y in range(projects.first().project_date.year, projects.last().project_date.year + 1):
+            # et["projects_{0}".format(y)] = projects.filter(project_date__year=y)
         # et['projects_2018'] = projects.filter(project_date__year=2018)
         # et['projects_2017'] = projects.filter(project_date__year=2017)
-        return et
-
+        return context
 
 # def IndexView(request):
 #     projects = Project.objects.order_by('-project_date')
