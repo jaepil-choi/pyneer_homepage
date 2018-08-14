@@ -12,7 +12,9 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <link rel="icon" href="assetes/img/favicon-font.png" sizes="16x16">
+
+        <link rel="icon" href="{% static '/projects/images/favicon-font.png' %}" sizes="16x16">
+
         <title>PYNEER</title>
     </head>
 
@@ -78,10 +80,10 @@
                 <h2>Project</h2>
                 <div class="l-col-1-12">
                     <div class="project-info">
-                        <div id="year2016-2">
+                        <div>
                             <h3>2016-2</h3>
-                            <ul class="year2016-2">
-                            {% for p in object_list %}
+                            <ul>
+                            {% for p in projects_2018 %}
 
                             <li>
                                 <div class="circle" style="background-color: #ff00ff" href="">
