@@ -1,6 +1,43 @@
-<h1>{{ project.project_title }}</h1>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static '/projects/style.css' %}">
+        <link rel="stylesheet" href="{% static '/projects/font/blippo.css' %}">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <title>PYNEER</title>
+    </head>
 
-<p>{{ project.project_text}}</p>
+    <body>
+        <div class="header">
+            <div class="l-wrapper">
+                <a class="header-logo" href="#">pyneer</a>
 
-<p>This project finished on: {{ project.project_date }}</p>
+                <!-- hamburger menu for mobile -->
+                <input type="checkbox" class="menu-box" id="menu-control" />
+                <label class="menu-button" for="menu-control">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
 
+                <ul class="header-menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="page-container">
+          {% block content %}
+          {% endblock %}
+        </div>
+    </body>
+</html>
