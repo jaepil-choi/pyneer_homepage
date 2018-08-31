@@ -17,9 +17,22 @@
         </div>
     </div>
     <div class="project-images">
-        
+        <!--디테일에서 사진 불러오는 코드-->
+        {% if project.image %}
+        <img src="{{ project.image.url }}">
+        {% else %}
+        {% endif %}
     </div>
-    <div class="project-external">{{ project.project_extra }}</div>
-</section>
+    <div class="project-external">
+        {{ project.project_extra }}
+    </div>
+    {% if project.image %}
+        <div>
+        <a href="{{ project.file.url }}">Download file</a>
+        </div>
+    {% else %}
+    {% endif %}
 
+
+</section>
 {% endblock %}
