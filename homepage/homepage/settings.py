@@ -25,7 +25,7 @@ SECRET_KEY = 'ltwy19u5$(g%ob1mrsr2ru*2z3$260w4%&jbf@2%zs*!x!tg-d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pyneer.pythonanywhere.com']
+ALLOWED_HOSTS = ['pyneer.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition

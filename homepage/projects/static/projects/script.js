@@ -40,7 +40,9 @@ $header.find('a').click( function(event) {
         $('html, body').animate({ scrollTop: target+(gap*1.5)},700); 
     }
 });
-
+$('.menu-button').on('click', function(){
+    $('.header-menu-mobile').toggle();
+});
 /* Card animation for mobile page */ 
 $('.section.intro').on('click', function () {
     $('.card').toggleClass('flipped');
