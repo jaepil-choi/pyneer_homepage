@@ -39,7 +39,7 @@ $(window).scroll( function() {
 $(window).on("scroll", function() {
     var scrollHeight = $(document).height();
     var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+    if ( scrollPosition > (scrollHeight - 10)) {
         $('li').eq(3).children('a').addClass('active');
         $('li').eq(3).siblings().children('a').removeClass('active');
     }

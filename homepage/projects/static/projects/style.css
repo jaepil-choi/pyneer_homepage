@@ -156,7 +156,7 @@ input{
     margin-bottom: 20px;
 }
 .section.intro p{
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 canvas {
     background: white;
@@ -213,7 +213,7 @@ canvas {
     position: relative;
     max-width: 69%;
     line-height: 1.4;
-    font-size: 1.1em;
+    font-size: 1.4em;
     color: #4d5256;
 }
 

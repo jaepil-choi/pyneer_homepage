@@ -74,7 +74,11 @@
 
                         <a class="part" href="">
                             <h3 class="part-title"><span class="number">01.</span><br>프로젝트 개발</h3>
-                            <p>실제 문제를 해결하기 위한 프로젝트 활동을 통해서 살아있는 프로그래밍 역량을 키웁니다.</p>
+                            <p>Pyneer에서는 실제 문제를 해결하기 위한 프로젝트 활동을 통해서 살아있는 프로그래밍 역량을 키웁니다.
+                                Python, C++, JAVA 등 다양한 프로젝트 유형을 진행하고 있으며,
+                                전공 구분 없이 자신이 배운 프로그래밍을 통해 아이디어를 실현하고 싶은 분이면 누구나 환영합니다.
+                                <br>학회는 명륜 캠퍼스와 율전 캠퍼스가 합쳐서 운영되며,
+                                주 1회 이상 오프라인 회의를 가집니다. 또한 한 학기에 2회 정도 캠퍼스 통합 모임이 있습니다.</p>
                         </a>
                     </li>
                     <li class="l-col l-col-6-12">
@@ -93,10 +97,10 @@
             <div class="container-desktop">
                 <h2>Project</h2><span class="border">&nbsp;</span>
                 <table>
+                    {% for y in years %}
                     <tr>
                         <th class="project-year">
-                            {% for y in years %}
-                            <h3>{{ y }}</h3>
+                            <h2>{{ y }}</h2>
                         </th>
                         {% for p in object_list %}
                             {% if p.project_date.year == y %}
