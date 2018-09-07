@@ -1,4 +1,5 @@
 var $header = $('.header-menu');
+var $headerMobile = $('.header-menu-mobile');
 var $logo = $('.header-logo');
 var headerPos = $header.position(); 
 
@@ -71,6 +72,26 @@ $header.find('a').click( function(event) {   // header-menu에서 a 클릭하면
 });
 
 /* Header mobile */
+$headerMobile.find('a').click( function(event) {   // header-menu에서 a 클릭하면 실행되는 이벤트
+    event.preventDefault(); 
+    var index = $(this).parent().index();   // 현재 클릭한 a 인덱스
+    var section = $('.section').eq(index);  // 현재 클릭한 인덱스에 해당되는 섹션
+    var target = section.position().top;    // 스크롤이 이동할 섹션의 top위치
+    var gap = $('.header-menu').height();   // 네비 메뉴만큼의 여백
+    var currPos = $(window).scrollTop(); 
+    var start = $(this).position().top - $(window).height();
+    var end = start + $(this).height();
+    if(index==0){   // home을 누른 경우
+        $('html, body').animate({ 
+            scrollTop: 0 
+        },700); 
+    }
+    else{ 
+        $('html, body').animate({ 
+            scrollTop: target - gap
+        },700); 
+    }
+});
 $('.menu-button').on('click', function(){
     $('.header-menu-mobile').toggle();
 });
