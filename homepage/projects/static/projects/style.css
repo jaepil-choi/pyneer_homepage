@@ -762,7 +762,6 @@ canvas {
         font-size: 1.0em;
         left: 60%;
         display: inline-block;
-        overflow: hidden;
         float:left;
     }
     .page-project .project-ty__member{
