@@ -98,8 +98,6 @@
                             {% for y in years %}
                             <h3>{{ y }}</h3>
                         </th>
-                    </tr>
-                    <tr>
                         {% for p in object_list %}
                             {% if p.project_date.year == y %}
                         <td onclick="window.location='{% url 'projects:detail' p.id %}'">
@@ -111,21 +109,46 @@
                                     <div class="content">
                                         {{ p.project_text }}
                                     </div>
+                                    {% endif %}
                                 </div>
+
+                                {% endfor %}
                             </div>
-                            {% endif %}
-                    {% endfor %}
                         </td>
                     </tr>
                     {% endfor %}
                 </table>
             </div>
+            <div class="container-mobile">
+                <h2 class="mobile">&nbsp;Project</h2>
+                <div class="wrap-drop">
+                    <h3 class="project-year">2016</h3>
+                    <ul class="drop">
+                        <li class="selected"><div class="proj"><a>프로젝트1</a></div></li>
+                    </ul>
+                </div>
+                <div class="wrap-drop">
+                    <h3 class="project-year">2017</h3>
+                    <ul class="drop">
+                        <li class="selected"><div class="proj"><a>프로젝트1</a></div></li>
+                        <li><div class="proj"><a>프로젝트2</a></div></li>
+                        <li><div class="proj"><a>프로젝트3</a></div></li>
+                        <li><div class="proj"><a>프로젝트4</a></div></li>
+                    </ul>
+                </div>
+                <div class="wrap-drop">
+                    <h3 class="project-year">2018</h3>
+                    <ul class="drop">
+                        <li class="selected"><div class="proj"><a>프로젝트1</a></div></li>
+                        <li><div class="proj"><a>프로젝트2</a></div></li>
+                        <li><div class="proj"><a>프로젝트3</a></div></li>
+                        <li><div class="proj"><a>프로젝트4</a></div></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-                
 
-            </ul>
-                </div></div>
-        </div>
+
 
         <div class="section contact">
             <h3>Contact</h3>
