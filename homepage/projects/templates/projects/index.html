@@ -8,7 +8,6 @@
 
         <link rel="stylesheet" href="{% static '/projects/style.css' %}">
         <!--여기에 '/project'라고 하니까 안됐었다. 대체 왜??? -->
-        <link rel="stylesheet" href="{% static '/projects/font/blippo.css' %}">
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -19,81 +18,92 @@
     </head>
 
     <body>
-      
+      <!-- HEADER NAVIGATION MENU -->
        <div class="arrow-up">&uarr;</div>
-       <div class="header-menu-mobile">
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>  
-        <li><a href="#">Project</a></li>
-        <li style="border-bottom: 1px solid black"><a href="#">Contact</a></li>
-        </div>
         <div class="header">
             <div class="l-wrapper">
-                <a class="header-logo" href="#">pyneer</a>
-
-                <!-- hamburger menu for mobile -->
-                <input type="checkbox" class="menu-box" id="menu-control" />
-                <label class="menu-button" for="menu-control"> 
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </label>
-
-                <div class="header-menu">
+                <div class="header-logo" href="#"><a href=""><img src="{% static '/projects/images/logo.svg' %}"></a></div>
+                <ul class="header-menu">
                     <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About</a></li>  
+                    <li><a href="#">About</a></li>
                     <li><a href="#">Project</a></li>
                     <li><a href="#">Contact</a></li>
 
-                </div>
+                </ul>
             </div>
-
+        </div>
+        <!-- hamburger menu for mobile -->
+        <input type="checkbox" class="menu-box" id="menu-control" />
+        <label class="menu-button" for="menu-control">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </label>
+        <div class="header-menu-mobile">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Project</a></li>
+            <li style="border-bottom: 1px solid black"><a href="#">Contact</a></li>
         </div>
 
+        <!-- INTRO -->
         <div class="section intro">
             <div class="container">
-                <canvas width="1000" height="400"></canvas>
-            <div class="intro-overlay">
-                <div class="card" id="gradient">
+                <div class="intro-overlay"></div>
+                <div class="card">
                     <div class="front">
-                        <div class="header-title">성균관대학교<br >프로그래밍 동아리 Pyneer<br></div><div class="pyneer-title"><br></div>
+                        <div class="title-skku">성균관대학교 <br class="br-on-mobile">프로그래밍 동아리<br></div><div class="title-pyneer">Pyneer<br></div>
                     </div>
                     <div class="back">
-                    <div class="back-content">Pyneer에서는 서로 다른 분야의 학생들이 모여 각자가 알고 있는 전공 지식을<br>서로에게 가르치고 배우면서 사고의 스펙트럼을 넓힙니다.<br>새로운 아이디어를 구체화하고 제작하면서 실질적인 프로그래밍에 대한 이해도 키우고,<br>구체적인 팀 경험을 통해 협업하는 환경에서 성장하는 기회를 제공합니다.</div></div>
+                        <div class="back-content">
+                            <p>Pyneer에서는 서로 다른 분야의 학생들이 모여 각자가 알고 있는 전공 지식을<br>서로에게 가르치고 배우면서 사고의 스펙트럼을 넓힙니다.<br>새로운 아이디어를 구체화하고 제작하면서 실질적인 프로그래밍에 대한 이해도 키우고,<br>구체적인 팀 경험을 통해 협업하는 환경에서 성장하는 기회를 제공합니다.</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <!--            <canvas width="1000" height="400"></canvas>-->
         </div>
 
-
+        <!-- ABOUT -->
         <div class="section about">
-            <ul class="l-row">
-                <li class="l-col l-col-6-12">
-                    <a class="part" href="" id=1>
-                        <h2 class="part-title">프로젝트 개발</h2>
-                        <p>실제 문제를 해결하기 위한 프로젝트 활동을 통해서 살아있는 프로그래밍 역량을 키웁니다</p>
-                    </a>
-                </li>
-                <li class="l-col l-col-6-12">
-                    <a class="part" href="" id=2>
-                        <h2 class="part-title">스터디 운영</h2>
-                        <p>다양한 전공분야와 배경지식을 가진 학생들이 아이디어를 도출하고 협업하는 팀 문화 속에서 각자 부족한 부분에 맞는 스터디를 진행합니다</p>
-                    </a>
-                </li>
-            </ul>
-        </div>  
+            <div class="container">
+                <h2>About us</h2><span class="border">&nbsp;</span>
+                <ul class="l-row">
+                    <li class="l-col l-col-6-12">
+                        <p></p>
 
+                        <a class="part" href="">
+                            <h3 class="part-title"><span class="number">01.</span><br>프로젝트 개발</h3>
+                            <p>실제 문제를 해결하기 위한 프로젝트 활동을 통해서 살아있는 프로그래밍 역량을 키웁니다.</p>
+                        </a>
+                    </li>
+                    <li class="l-col l-col-6-12">
+                        <a class="part right" href="">
+                            <h3 class="part-title"><span class="number">02.</span><br>스터디 운영</h3>
+                            <p>다양한 전공분야와 배경지식을 가진 학생들이 아이디어를 도출하고 협업하는 팀 문화 속에서 각자 부족한 부분에 맞는 스터디를 진행합니다.</p>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROJECT -->
         <div class="section project">
-            <ul class="l-row">
-                <h2>Project</h2>
-                <div class="l-col-1-12">
-                    <div class="project-info">
-                        {% for y in years %}
-                        <div>
+            <div class="container-desktop">
+                <h2>Project</h2><span class="border">&nbsp;</span>
+                <table>
+                    <tr>
+                        <th class="project-year">
+                            {% for y in years %}
                             <h3>{{ y }}</h3>
-                            <ul>
-                            {% for p in object_list %}
-                                {% if p.project_date.year == y %}
-                            <li>
-                                <div class="circle" style="background-color: #ff00ff">
+                        </th>
+                    </tr>
+                    <tr>
+                        {% for p in object_list %}
+                            {% if p.project_date.year == y %}
+                        <td onclick="window.location='{% url 'projects:detail' p.id %}'">
+                            <div class="proj">
                                 <div class="desc">
                                     <div class="desc-title">
                                         <a href="{% url 'projects:detail' p.id %}">{{ p.project_title }}</a>
@@ -101,16 +111,16 @@
                                     <div class="content">
                                         {{ p.project_text }}
                                     </div>
-                                </div> 
                                 </div>
-                            </li>
-                                {% endif %}
-                            {% endfor %}
-                            </ul>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
+                            </div>
+                            {% endif %}
+                    {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
                 
 
             </ul>

@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 html{
+    width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 html, body, li, ul, h2, h3, p, canvas, section{
     margin: 0;
@@ -12,9 +12,10 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
-    border: 0;
     font-size: 14px;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    border: 0;
 }
 li{
     list-style-type: none;
@@ -31,7 +32,6 @@ input{
 }
 /* LAYOUTS */
 .l-wrapper{
-    max-width: 1280px;
     margin: 0 auto;
     position: relative;
 }
@@ -50,19 +50,20 @@ input{
     width: 100%;
 }
 .section{
-    padding: 30px 0;
+    padding: 10px 0;
 }
 .arrow-up{
     position: fixed;
     right: 30px;
-    bottom: 10px;
+    bottom: 20px;
     z-index: 100;
     width: 30px;
     font-size: 30px;
-    border: 1px solid black;
+    border: 0;
 }
 .arrow-up:hover{
     background-color: black;
+    border-radius: 50%;
     color: white;
     cursor: pointer;
 }
@@ -71,19 +72,23 @@ input{
 .header{
     overflow: hidden;
 }
-
-.header-logo{
-    margin: 15px 20px 20px 60px;
-    position: fixed;
-    float: left;
-    top: 10px;
-    z-index: 50;
-    display: block;
-    color: #002060;
-    font-size: 2rem;
-    font-family: 'blippoblack';
+.header-menu-mobile{
+    display: none;
 }
 
+
+.header-logo{
+    position: relative;
+    left: 6%;
+    width: auto;
+}
+.header-logo img{
+    margin-top: 24px;
+    width: 120px;
+    height: auto;
+    position: relative;
+    z-index: 999;
+}
 .header-logo.fixed{
     display: block;
     float: left;
@@ -95,7 +100,7 @@ input{
     right: 60px;
     margin-top: 10px;
     margin-bottom: 20px;
-    font-size: 0.85rem;
+    font-size: 1vw;
     font-weight: 500;
     color: gray;
     z-index: 50;
@@ -117,6 +122,7 @@ input{
 .header-menu li a.active{
     color: #002060;
     font-weight: 800;
+    text-decoration: underline;
 }
 .header-menu li a:hover{
     color: #002060;
@@ -128,38 +134,35 @@ input{
 /* Header Cover(Front-Main page) */
 .section.intro{
     height: 100%;
+    padding-top: 0;
 }
-.section.intro .intro-overlay{
-    position: absolute;
-    top: 8%;
-    left: 9%;
-    z-index: 1;
-}
-.front{
-    font-size: 40px;
-    font-weight: 900;
-    
-}
-.back{
-    margin-top: 50px;
-    font-size: 20px;
-}
-.section.intro h2 {
-    font-size: 34px;
-    font-weight: 600;
-    left: 100px;
-    color: #333;
-    top: 0;
-}
-.container {
+.section.intro .container {
     position: relative;
-    top: -44px;
-    width: 100%;
+    top: 20%;
+    left: 8%;
+    z-index: 999; 
+}
+.section.intro .title-skku{
+    font-size: 3.2em;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+}
+.section.intro .title-pyneer{
+    font-size: 3.2em;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.section.intro p{
+    font-size: 1.2em;
 }
 canvas {
     background: white;
     width: 100%;
-    z-index: 3;
+    position: absolute;
+    top: 0;
 }
 
 
@@ -168,30 +171,49 @@ canvas {
 .section.about{
     background-color: white;
     padding-bottom: 30px;
-    height: 40%;
+    height: 100%;  
 }
-
+.section.about .container {
+    width: 100%;
+    position: relative;
+    left: 8%;
+    z-index: 999; 
+}
+.section.about h2{
+    position: relative;
+    font-size: 2.4em;
+    color: #333;
+    width: 170px;
+}
+.section.about span.border{
+    width: 90px;
+    display: block;
+    border-top: 4px solid #333;
+    height: 0;
+}
 .section.about .part{
     display: block;
-    text-align: center;
-    padding: 30px 70px;
-    
+    padding: 35px 0 10px 0;
 }
-.section.about a#1.part{
-    margin-bottom: 100px;
+.section.about .part.right{
+    position: relative;
+    left: -30px;
 }
-
-.section.about h2{
-    font-size: 1.8rem;
-    
+.section.about .part-title{
+    color: #333;
+    font-size: 2.0em;
+    position: relative;
     margin-bottom: 20px;
 }
-
+.section.about .part-title span{
+    font-size: 2.2em;
+}
 .section.about .part p {
     overflow: hidden;
-    line-height: 1.5;
-    font-size: 0.9rem;
-    margin-bottom: 70px;
+    position: relative;
+    max-width: 69%;
+    line-height: 1.4;
+    font-size: 1.1em;
     color: #4d5256;
 }
 
@@ -203,75 +225,74 @@ canvas {
     color: #363a3c;
     height: auto;
     min-height: 550px;
-
+    overflow: hidden;
 }
-.project-info{
-    height: 600px;
-    width: 960px;
+.section.project .container-desktop{
+    width: 100%;
+    position: relative;
+    top: 30%;
+    left: 8%;
+    z-index: 999;
 }
 .section.project h2{
-    position: relative;
-    left: 8%;
-    top: 70px;
-    font-size: 2rem;
+    font-size: 2.4em;
+    color: #333;
+    width: 170px;
 }
-.section.project .project-info h3{
-    position: relative;
-    top: 34px;
-    left: 27%;
-    float: left;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.section.project .project-info ul{
-    position: relative;
-    left: 35%;
-    top: -10px;
-}
-.section.project .project-info li{
-    font-weight: 500;
-    font-size: 1.3rem;
-    float: left;
-    text-align: left;
-    position: relative;
-    display: inline-block;
-    left: 16px;
+.section.project span.border{
     width: 90px;
+    display: block;
+    border-top: 4px solid #333;
+    height: 0;
+}
+.section.project table{
+    margin-top: 40px;
+    max-width: 900px;
+}
+.section.project table th.project-year{
+    text-align: left;
+}
+.section.project table td{
+    padding-right: 40px;
+}
+.section.project .container-desktop div{
     height: 100px;
 }
-
-.section.project .project-info div{
-    
-    height: 100px;
+.section.project .container-mobile{
+    display: none;
 }
-
-
-
-
-.section.project .project-info .title{
+.section.project .container-desktop.title{
     position: relative;
     top: 30px;
     left: 30px;
     float: left;
 }
-
-.section.project .project-info .circle{
+.section.project .container-desktop .proj{
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #ff00ff;
     border: 3px solid #333;
     position: relative;
-    top: 40px;
-    left: -20px;
     float: left;
     cursor: pointer;
 
 }
-.section.project .project-info .circle .desc{
+.section.project .container-desktop .proj .desc{
     opacity: 0;
 }
-.section.project .project-info .circle:hover .desc{
+.section.project .container-desktop span.overlay{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    opacity: 0;
+    height: 0;
+}
+.section.project .container-desktop p{
+    opacity: 1.0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.section.project .container-desktop .proj:hover .desc{
     position: relative;
     border: 2px solid black;
     width: 300px;
@@ -282,7 +303,6 @@ canvas {
     opacity: 1.0;
     margin: 20px;
 }
-
 .desc .desc-title{
     padding: 8px 14px;
     font-size: 1.1rem;
@@ -291,7 +311,6 @@ canvas {
     top: 10px;
     font-weight: bold;
 }
-
 .desc .content{
     padding: 14px 8px;
     position: absolute;
@@ -300,24 +319,23 @@ canvas {
     font-weight: 300;
     font-size: 1.0rem;
 }
-
-.section.project .project-info span.overlay{
+.section.project .container-desktop span.overlay{
     position: absolute;
     top: 100%;
     left: 0px;
     opacity: 0;
     height: 0;
 }
-.section.project .project-info a#project1.circle:hover span.overlay{
+.section.project .container-desktop a#project1.circle:hover span.overlay{
     opacity: 1;
     width: 400px;
 }
-.section.project .project-info a#project1.circle:hover span.overlay .overlay-bg{
+.section.project .container-desktop a#project1.circle:hover span.overlay .overlay-bg{
     background-color: #ccc;
     width: 400px;
     opacity: 0.7;
 }
-.section.project .project-info p{
+.section.project .container-desktop p{
     opacity: 1.0;
     font-size: 0.9rem;
     font-weight: 400;
@@ -325,8 +343,7 @@ canvas {
 
 
 .contact{
-    background-color: #f7f7f7;
-    border-top: 1px solid #e1e4e6;
+    background-color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     padding: 60px 0;
@@ -344,126 +361,66 @@ canvas {
 }
 
 /* RESPONSIVE */
-@media(max-width: 768px){
-    .header{
-    }
-    .header-intro p{
-        text-align: center;
-        margin: 4rem;
-        width: 80%;
-    }
+@media(min-width: 1920px){
     .header-menu{
-        margin: 0 auto;
+        padding-top: 10px;
     }
-    .header-menu li{
-        float: none;
-        display: inline-block;
-        margin: 0 20px;
-        width: 20%
+    .header-logo img{
+        padding-top: 10px;
+        width: 200px;
     }
-    .header-menu li a{
-        display: inline-block;
-        padding: 0.8rem 1.5rem;
-        float: left;
-    }
-    .header-intro h2{
-        text-align: center;
-        margin-top: 10rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        width: 80%;
-    }
-    .header-intro p{
-        text-align: center;
-        width: 60%;
-    }
-    .l-wrapper{
-        width: 50%;
-    }
-    .l-wrapper.intro{
-        width: 100%;
-    }
-    .l-col{
-        width: 100%;
-    }
-    .l-col-6-12{
-        width: 100%;
-    }
+
 }
 @media(max-width: 480px){
-    
+    body{
+        overflow-x: hidden !important;
+    }
     .l-wrapper.intro{
         width: 100%;
     }
-    
     .l-col-6-12{
         width: 100%;
     }
-    
-    .project-title{
-        
-        font-size: 40px;
-        text-align: center;
-    }
-    
-    .project-info{
-        position: relative;
-        border: 1px solid black;
-        width: 90%;
-        margin: 0 auto;
-    
-    }
-    
-    
     .header .header-logo{
-        
-        margin: 0;
-        padding: 0;
-        height: 80px;
         position: relative;
-        top: 15px;
-        left: -60px;
-        font-size: 30px;
+        width: 100px;
+    }
+    .header .header-logo img{
+        width: 100px;
+        height: auto;
+        margin-top: 20px;
     }
     .header-menu{
         display: none;
     }
-    
-    .header-menu-mobile{
-        display: none;
-    }
-    
-    
     .header-menu-mobile{
         position: absolute;
-        
         width: 100%;
         height: 100%;
         text-align: center;
         z-index: 40;
         top: 10%;
-        
-        
     }
-    
     .header-menu-mobile li{
         border-top: 1px solid black;
         font-size: 1rem;
         background: white;
         padding: 10px;
     }
-    
-    
+
+
     /* Hamburger menu for mobile */
-    .menu-box {
+    .menu-box{
+        display: block;
+    }
+    #menu-control{
         display: none;
     }
-    
     .menu-button {
         position: absolute;
-        float: right;
         top: 15px;
-        right: -80px;
+        float: right;
+        right: 20px;
         width: 20px;
         height: 20px;
         margin: 10px;
@@ -483,7 +440,6 @@ canvas {
     .menu-button .line:not(:last-of-type) {
         margin-bottom: 4px;
     }
-    
 
     .menu-box:checked + .menu-button .line:nth-child(1) {
         transform: rotate(45deg) translateX(2.5px) translateY(-1.25px);
@@ -503,18 +459,18 @@ canvas {
         transform-origin: center left;
         -webkit-transform-origin: center left;
     }
-    
+
+    /* Section intro */ 
     .container{
         position: relative;
         width: 100%;
         top: 1px;
         margin: 0 auto;
-      
-        }
-    
-    
-    
+
+    }
+
     canvas{
+        width: 100%;
         height: 400px;
     }
     .section.intro{
@@ -522,32 +478,23 @@ canvas {
         width: 100%;
         padding: 0;
     }
-    .rect-on-mobile{
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 400px;
-        border: 4px solid #333;
+    .section.intro .container{
+        left: 0;
     }
-    .section.intro .header-title{
+    .title-skku{
         text-align: center;
         width: 100%;
         margin: 0 auto;
         position: relative;
+        font-size: 50px;
     }
-    .section.intro .pyneer-title{
+    .section.intro .title-pyneer{
         font-size: 50px;
         text-align: center;
         position: relative;
         margin: 0 auto;
     }
-    .section.intro .intro-overlay{
-        position: absolute;
-        margin: 0 auto;
-        left: 0px;
-        height: 100%;
-    }
-    
+
     .card {
         top: -6%;
         height: 30%;
@@ -561,48 +508,46 @@ canvas {
         box-shadow: 0 6px 16px rgba(0,0,0,0.15);
         cursor: pointer;
         opacity: 100;
-        
+
     }
     #gradient{
         opacity: 100;
-        
+
     }
-    
+
     .card:hover{
         -webkit-transform: perspective(800px) rotateY(180deg);
         -webkit-transition: 0.6s;
     }
-    
-    .card:hover .front{
-    z-index: 0;
-        
-}
 
-    
-.front, .back{
-    position: absolute;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    background: white;
-}
-    
-.front{
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-}
-.back{
-    position: relative;
-    top: -8%;
-     height: 100%;
-    -webkit-transform: rotateY(180deg);
-    z-index: 500;
-    width: 100%;
-}
+    .card:hover .front{
+        z-index: 0;
+
+    }
+    .front, .back{
+        position: absolute;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        background: white;
+    }
+
+    .front{
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .back{
+        position: relative;
+        top: -8%;
+        height: 100%;
+        -webkit-transform: rotateY(180deg);
+        z-index: 500;
+        width: 100%;
+    }
     .back-content{
         position: relative;
         padding: 15px;
@@ -612,15 +557,118 @@ canvas {
     .br-on-mobile{
         display: block;
     }
+    
+    /* Mobile about */ 
+    .section.about {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .section.about .container {
+        left: 0;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
     .section.about .part{
         padding-top: 10px;
+    }
+    .section.about .part.right{
+        left: 0;
+    }
+
+    .br-on-mobile{
+        display: block;
+    }
+
+
+    /* Project drop-down */
+    .section.project .container-mobile{
+        width: 100%;
+        position: relative;
+        top: 15px;
+        height: auto;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .section.project .container-desktop{
+        display: none;
+    }
+    .section.project h2.mobile{
+        left: 8%;
+        position: relative;
+    }
+
+    .wrap-drop {
+        background: #ffffff;
+        border: 2.3px solid #333;
+        cursor: pointer;
+        margin: 0 auto;
+        max-width: 225px;
+        height: auto;
+        padding: 1rem;
+        position: relative;
+        width: 75%;
+        z-index: 3;
+    }
+
+    .wrap-drop::after {
+        border-color: #333 transparent;
+        border-style:solid;
+        border-width:10px 10px 0;
+        content:"";
+        height:0;
+        margin-top:-4px;
+        position:absolute;
+        right:1rem;
+        top:50%;
+        width:0;
+    }
+
+    .wrap-drop .drop {
+        background: #ffffff;
+        border: 1.5px solid black;
+        display:none;
+        left:0;
+        margin-top:0;
+        padding-left:0;
+        pointer-events:none;
+        position:absolute;
+        right:0;
+        top:100%;
+        z-index:2;
+    }
+
+    .wrap-drop .drop li a {
+        color: #333;
+        border: 1px solid black;
+        display: block;
+        padding: 1rem;
+        text-decoration:none;
+    }
+
+    .wrap-drop .drop li:hover a {
+        background-color:#333;
+        color:#fff;
+    }
+
+    .wrap-drop.active::after {
+        border-width:0 10px 10px;
+    }
+
+    .wrap-drop.active .drop {
+        display: block;
+        opacity:1;
+        pointer-events:auto;
     }
 }
 
 
 /* Page.html */
 .page-container{
-    margin: 80px 60px;
+    margin: 100px 80px;
     max-width: 1080px;
 }
 .page-project .project-ty{
@@ -643,7 +691,7 @@ canvas {
     font-weight: 700;
     font-size: 18px;
     position: relative;
-    left: 84%;
+    left: 80%;
     float: right;
 }
 .page-project .project-ty__member{
@@ -652,7 +700,7 @@ canvas {
     line-height:  16px;
     font-weight: 700;
     position: relative;
-    left: 84%;
+    left: 80%;
     float: right;
 }
 

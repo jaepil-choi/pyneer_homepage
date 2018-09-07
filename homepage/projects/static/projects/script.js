@@ -1,60 +1,129 @@
 var $header = $('.header-menu');
 var $logo = $('.header-logo');
 var headerPos = $header.position(); 
-var bFixed = false;
-
-
 
 $('.arrow-up').click(function(event){
-   $('html,body').animate({scrollTop:0},300);
+    $('html,body').animate({scrollTop:0},300);
 });
+
 
 $(window).scroll( function() {
-    var currPos = $(window).scrollTop(); 
+    if($(window).width() > 480){
+        var currPos = $(window).scrollTop(); 
+        if(currPos > headerPos.top){ 
+            $header.addClass('fixed'); 
+            $logo.css('opacity', '0');
+        } 
+        else{ 
+            $header.removeClass('fixed'); 
+            $logo.css('opacity', '1');
+            //        $logo.addClass('fixed');
+        } 
+    }
+});
+$(window).scroll( function() {
+    $header.find('li').each( function(index) {
+        var gap = $(window).height() * 0.2;
+        var $section = $('.section').eq(index);
+        var currPos = $(window).scrollTop(); 
 
-    if(currPos > headerPos.top){ 
-        $header.addClass('fixed'); 
-        $logo.addClass('fixed');
-        bFixed = true;
-    } 
-    else{ 
-        $header.removeClass('fixed'); 
-        $logo.removeClass('fixed'); 
-        bFixed = false;
+        var start = $section.position().top - gap;
+        var end = start + $section.height();
+        if(currPos>start && currPos<end){
+            $(this).children('a').addClass('active');
+            $(this).siblings().children('a').removeClass('active');
+        }
+    });
+});
+$(window).on("scroll", function() {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+        $('li').eq(3).children('a').addClass('active');
+        $('li').eq(3).siblings().children('a').removeClass('active');
     }
 });
 
-$header.find('a').click( function(event) {
-    // Prevent default anchor click behavior
+$header.find('li').click( function(index) {
+    $(this).children('a').addClass('active');
+    $(this).siblings().children('a').removeClass('active');
+});
+
+$header.find('a').click( function(event) {   // header-menu에서 a 클릭하면 실행되는 이벤트
     event.preventDefault(); 
-
-    var index = $(this).parent().index();
-    var section = $('.section').eq(index);
-    var target = section.position().top;
-    var gap = $('.header-menu').height();
-
-    if(index==0){
-        $('html, body').animate({ scrollTop: 0 },700); 
+    var index = $(this).parent().index();   // 현재 클릭한 a 인덱스
+    var section = $('.section').eq(index);  // 현재 클릭한 인덱스에 해당되는 섹션
+    var target = section.position().top;    // 스크롤이 이동할 섹션의 top위치
+    var gap = $('.header-menu').height();   // 네비 메뉴만큼의 여백
+    var currPos = $(window).scrollTop(); 
+    var start = $(this).position().top - $(window).height();
+    var end = start + $(this).height();
+    if(index==0){   // home을 누른 경우
+        $('html, body').animate({ 
+            scrollTop: 0 
+        },700); 
     }
     else{ 
-        $('html, body').animate({ scrollTop: target+(gap*1.5)},700); 
+        $('html, body').animate({ 
+            scrollTop: target - gap
+        },700); 
     }
 });
+
+/* Header mobile */
 $('.menu-button').on('click', function(){
     $('.header-menu-mobile').toggle();
 });
-/* Card animation for mobile page */ 
-$('.section.intro').on('click', function () {
-    $('.card').toggleClass('flipped');
 
+/* Card animation for mobile page */ 
+$('.card').on('click', function () {
+    $('.card').toggleClass('flipped');
 });
+
 /* project popup */
-$('.circle').on('click', function(){
-    $('.circle>.desc').css('display', 'none');
+$('.proj').on('click', function(){
+    $('.proj>.desc').css('display', 'none');
     $(this).children('.desc').css('display', 'block');
 });
+/* project drop-down*/
+function DropDown(el) {
+    this.dd = el;
+    this.placeholder = this.dd.children('h2');
+    this.opts = this.dd.find('ul.drop li');
+    this.val = '';
+    this.index = -1;
+    this.initEvents();
+}
 
-/* Header animation */
+DropDown.prototype = {
+    initEvents: function () {
+        var obj = this;
+        obj.dd.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).toggleClass('active');
+        });
+        obj.opts.on('click', function () {
+            var opt = $(this);
+            obj.val = opt.text();
+            obj.index = opt.index();
+            opt.siblings().removeClass('selected');
+            opt.filter(':contains("' + obj.val + '")').addClass('selected');
+        }).change();
+    },
+    getValue: function () {
+        return this.val;
+    },
+    getIndex: function () {
+        return this.index;
+    }
+};
+
+$(function () {
+    var dd1 = new DropDown($('.wrap-drop'));
+});
+
+/*
 (function() {
     // strict mode
     "use strict";
@@ -359,7 +428,7 @@ $('.circle').on('click', function(){
                                     context,
                                     tick);
                             }.bind(this);
-                        
+
                         // start animation loop
                         (function loop() {
                             // calculate tick time between frames
@@ -394,9 +463,10 @@ $('.circle').on('click', function(){
             }())
         };
     }
-    
+
     // our init is triggered when the window is loaded/ready
     window.addEventListener(
         "load",
         initPage);
 }());
+*/
