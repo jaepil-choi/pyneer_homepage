@@ -9,8 +9,8 @@ class Project(models.Model):
     # 파일업로드
     file = models.FileField(upload_to='uploads', default="", blank=True)
 
-    project_title = models.CharField(max_length=105)         # 프로젝트 제목
-    project_shorten = models.TextField()                     # 프로젝트 간략설명(2줄 이내)
+    project_title = models.CharField(max_length=100)         # 프로젝트 제목
+    project_shorten = models.TextField(default="", max_length=100)                     # 프로젝트 간략설명(2줄 이내)
     project_text = models.TextField()                        # 프로젝트 상세설명
     project_date = models.DateField('Date Finished')         # 프로젝트 날짜
     project_member = models.TextField(default="No one")      # 멤버 이름
