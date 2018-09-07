@@ -79,7 +79,7 @@ input{
 
 .header-logo{
     position: relative;
-    left: 6%;
+    left: 4%;
     width: auto;
 }
 .header-logo img{
@@ -275,7 +275,6 @@ canvas {
     position: relative;
     float: left;
     cursor: pointer;
-
 }
 .section.project .container-desktop .proj .desc{
     opacity: 0;
@@ -668,65 +667,64 @@ canvas {
 }
 
 
-/* Page.html */
+/* detail.html */
 .page-container{
-    margin: 100px 80px;
-    max-width: 1080px;
+    margin: 100px 180px;
 }
 .page-project .project-ty{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 .page-project .project-ty__title{
     max-width: 650px;
     width: calc(100% - 400px);
-    font-size: 1.0em;
+    font-size: 1.5rem;
     font-weight: 700;
+    height: auto;
 }
 .page-project .project-ty__title h2{
     border-top: 5px solid #000;
-    display:inline-block;
+    display: inline-block;
 }
 .page-project .project-ty__year{
-    margin-left: 50px;
     width: 350px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.5rem;
     position: relative;
-    left: 80%;
     float: right;
+    left: calc(100% + 250px);
 }
 .page-project .project-ty__member{
-    margin-left: 50px;
     width: 350px;
-    line-height:  16px;
     font-weight: 700;
     position: relative;
-    left: 80%;
     float: right;
+    left: calc(100% + 250px);
+    font-size: 1.5rem;
+    vertical-align: top;
 }
-
-
 .page-project .project-info{
-    max-width: 650px;
-    width: calc(100% - 400px);
+    max-width: 900px;
+    width: calc(100% - 350px);
     margin-bottom: 50px;
     margin-top: 90px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
-
+.page-project .project-info .project-info__desc p{
+    font-size: 1.4rem;
+}
 .page-project .project-images img{
     width: 500px;
     display: block;
 }
-
 .page-project .project-external{
     width: calc(100% - 400px);
     max-width: 650px;
     margin-top: 80px;
     font-weight: 400;
-    font-size: 1.0rem;
+    font-size: 1.2rem;
 }
 

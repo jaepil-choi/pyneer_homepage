@@ -70,23 +70,20 @@
                 <h2>About us</h2><span class="border">&nbsp;</span>
                 <ul class="l-row">
                     <li class="l-col l-col-6-12">
-                        <p></p>
-
-                        <a class="part" href="">
+                        <div class="part">
                             <h3 class="part-title"><span class="number">01.</span><br>프로젝트 개발</h3>
                             <p>Pyneer에서는 실제 문제를 해결하기 위한 프로젝트 활동을 통해서 살아있는 프로그래밍 역량을 키웁니다.
                                 Python, C++, JAVA 등 다양한 프로젝트 유형을 진행하고 있으며,
                                 전공 구분 없이 자신이 배운 프로그래밍을 통해 아이디어를 실현하고 싶은 분이면 누구나 환영합니다.
                                 <br>학회는 명륜 캠퍼스와 율전 캠퍼스가 합쳐서 운영되며,
                                 주 1회 이상 오프라인 회의를 가집니다. 또한 한 학기에 2회 정도 캠퍼스 통합 모임이 있습니다.</p>
-                        </a>
+                        </div>
                     </li>
                     <li class="l-col l-col-6-12">
-                        <a class="part right" href="">
+                        <div class="part right">
                             <h3 class="part-title"><span class="number">02.</span><br>스터디 운영</h3>
                             <p>다양한 전공분야와 배경지식을 가진 학생들이 아이디어를 도출하고 협업하는 팀 문화 속에서 각자 부족한 부분에 맞는 스터디를 진행합니다.</p>
-                        </a>
-
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -111,7 +108,7 @@
                                         <a href="{% url 'projects:detail' p.id %}">{{ p.project_title }}</a>
                                     </div>
                                     <div class="content">
-                                        {{ p.project_text }}
+                                        {{ p.project_shorten }}
                                     </div>
                                     {% endif %}
                                 </div>
