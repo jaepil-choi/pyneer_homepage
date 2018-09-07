@@ -359,6 +359,71 @@ canvas {
     font-size: 0.9rem;
 }
 
+
+
+/* detail.html */
+.page-container{
+    margin: 100px 180px;
+}
+.page-project .project-ty{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.page-project .project-ty__title{
+    max-width: 650px;
+    width: 350px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    height: auto;
+}
+.page-project .project-ty__title h2{
+    border-top: 5px solid #000;
+    display: inline-block;
+}
+.page-project .project-ty__year{
+    width: 350px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: relative;
+    float: right;
+    left: calc(70% + 50px);
+}
+.page-project .project-ty__member{
+    width: 350px;
+    font-weight: 700;
+    position: relative;
+    float: right;
+    left: calc(70% + 50px);
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+.page-project .project-info{
+    max-width: 900px;
+    width: calc(100% - 350px);
+    margin-bottom: 50px;
+    margin-top: 90px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.page-project .project-info .project-info__desc p{
+    font-size: 1.4rem;
+}
+.page-project .project-images img{
+    width: 500px;
+    display: block;
+}
+.page-project .project-external{
+    width: calc(100% - 400px);
+    max-width: 650px;
+    margin-top: 80px;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+
+
 /* RESPONSIVE */
 @media(min-width: 1920px){
     .header-menu{
@@ -588,7 +653,7 @@ canvas {
     .section.project .container-mobile{
         width: 100%;
         position: relative;
-        top: 15px;
+        top: 100px;
         height: auto;
         display: block;
         margin-left: 0;
@@ -664,67 +729,52 @@ canvas {
         opacity:1;
         pointer-events:auto;
     }
-}
 
+    /* detail.html */
+    .header .header-logo.detail img{
+        width: 100px !important;
+    }
+    .page-container{
+        margin: 50px 25px;
+    }
+    .page-project .project-info{
+        display: block;
+        width: auto;
+    }
+    .page-project .project-info .project-info__desc p{
+        font-size: 14px;
+    }
 
-/* detail.html */
-.page-container{
-    margin: 100px 180px;
+    .page-project .project-ty{
+        display: flex;
+        justify-content: space-between;
+    }
+    .page-project .project-ty__title{
+        width: calc(70% - 35px);
+        position: relative;
+        float: left;
+    }
+    .page-project .project-ty__title h2{
+        font-size: 1.2rem;
+    }
+    .page-project .project-ty__year{
+        width: 30%;
+        font-size: 1.0em;
+        left: 60%;
+        display: inline-block;
+        overflow: hidden;
+        float:left;
+    }
+    .page-project .project-ty__member{
+        width: 30%;
+        font-size: 1.0em;
+        left: 60%;
+    }
+    .page-project .project-images img{
+        width: 75%;
+        display: block;
+    }
+    .page-project .project-external{
+        font-size: 1.1rem;
+    }
 }
-.page-project .project-ty{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.page-project .project-ty__title{
-    max-width: 650px;
-    width: calc(100% - 400px);
-    font-size: 1.5rem;
-    font-weight: 700;
-    height: auto;
-}
-.page-project .project-ty__title h2{
-    border-top: 5px solid #000;
-    display: inline-block;
-}
-.page-project .project-ty__year{
-    width: 350px;
-    font-weight: 700;
-    font-size: 1.5rem;
-    position: relative;
-    float: right;
-    left: calc(100% + 250px);
-}
-.page-project .project-ty__member{
-    width: 350px;
-    font-weight: 700;
-    position: relative;
-    float: right;
-    left: calc(100% + 250px);
-    font-size: 1.5rem;
-    vertical-align: top;
-}
-.page-project .project-info{
-    max-width: 900px;
-    width: calc(100% - 350px);
-    margin-bottom: 50px;
-    margin-top: 90px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-.page-project .project-info .project-info__desc p{
-    font-size: 1.4rem;
-}
-.page-project .project-images img{
-    width: 500px;
-    display: block;
-}
-.page-project .project-external{
-    width: calc(100% - 400px);
-    max-width: 650px;
-    margin-top: 80px;
-    font-weight: 400;
-    font-size: 1.2rem;
-}
-
