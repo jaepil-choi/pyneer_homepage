@@ -56,7 +56,7 @@ input{
     position: fixed;
     right: 30px;
     bottom: 20px;
-    z-index: 100;
+    z-index: 1000;
     width: 30px;
     font-size: 30px;
     border: 0;
@@ -97,7 +97,7 @@ input{
     right: 60px;
     margin-top: 10px;
     margin-bottom: 20px;
-    font-size: 1vw;
+    font-size: 1.1vw;
     font-weight: 500;
     color: gray;
     z-index: 50;
@@ -134,7 +134,7 @@ input{
     padding-top: 0;
 }
 .section.intro .container {
-    max-width: 900px;
+    max-width: 90%;
     width: 70%;
     position: relative;
     top: 20%;
@@ -142,20 +142,21 @@ input{
     z-index: 999; 
 }
 .section.intro .title-skku{
-    font-size: 3.1em;
+    font-size: 3.1vw;
     font-weight: 600;
     color: #333;
     line-height: 1.2;
 }
 .section.intro .title-pyneer{
-    font-size: 3.1em;
+    font-size: 3.1vw;
     font-weight: 600;
     color: #333;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 .section.intro p{
-    font-size: 1.3em;
+    display: inline-block;
+    font-size: 1.4vw;
 }
 canvas {
     background: white;
@@ -172,17 +173,14 @@ canvas {
     padding-bottom: 30px;
     height: 100%;  
 }
+.section.about h2{
+    font-size: 2.0vw;
+}
 .section.about .container {
     width: 100%;
     position: relative;
     left: 8%;
     z-index: 999; 
-}
-.section.about h2{
-    position: relative;
-    font-size: 2.3em;
-    color: #333;
-    width: 170px;
 }
 .section.about span.border{
     width: 90px;
@@ -200,19 +198,19 @@ canvas {
 }
 .section.about .part-title{
     color: #333;
-    font-size: 1.8em;
+    font-size: 2.2vw;
     position: relative;
     margin-bottom: 20px;
 }
-.section.about .part-title span{
-    font-size: 2.2em;
+.section.about .part-title span.number{
+    font-size: 2.9vw;
 }
 .section.about .part p {
     overflow: hidden;
     position: relative;
     max-width: 69%;
-    line-height: 1.4;
-    font-size: 1.3em;
+    line-height: 1.5;
+    font-size: 1.3vw;
     color: #4d5256;
 }
 
@@ -234,7 +232,7 @@ canvas {
     z-index: 999;
 }
 .section.project h2{
-    font-size: 2.4em;
+    font-size: 2.0vw;
     color: #333;
     width: 170px;
 }
@@ -249,6 +247,7 @@ canvas {
     max-width: 900px;
 }
 .section.project table th.project-year{
+     font-size: 1.5vw;
     text-align: left;
 }
 .section.project table td{
@@ -278,6 +277,7 @@ canvas {
 .section.project .container-desktop .proj .desc{
     opacity: 0;
 }
+/*
 .section.project .container-desktop span.overlay{
     position: absolute;
     top: 100%;
@@ -285,12 +285,13 @@ canvas {
     opacity: 0;
     height: 0;
 }
+*/
 .section.project .container-desktop p{
     opacity: 1.0;
-    font-size: 0.9rem;
+    font-size: 1.0vw;
     font-weight: 400;
 }
-.section.project .container-desktop .proj:hover .desc{
+.section.project .container-desktop .proj.circle:hover .desc{
     position: relative;
     border: 2px solid black;
     width: 300px;
@@ -303,19 +304,20 @@ canvas {
 }
 .desc .desc-title{
     padding: 8px 14px;
-    font-size: 1.1rem;
+    font-size: 1.3vw;
     position: absolute;
     left: 5px;
     top: 10px;
     font-weight: bold;
 }
 .desc .content{
-    padding: 14px 8px;
+    max-width: 86%;
+    padding: 14px 10px;
     position: absolute;
     margin-top: 40px;
     left: 10px;
-    font-weight: 300;
-    font-size: 1.0rem;
+    font-weight: 400;
+    font-size: 1.2vw;
 }
 .section.project .container-desktop span.overlay{
     position: absolute;
@@ -335,7 +337,7 @@ canvas {
 }
 .section.project .container-desktop p{
     opacity: 1.0;
-    font-size: 0.9rem;
+    font-size: 1.1vw;
     font-weight: 400;
 }
 
@@ -355,7 +357,7 @@ canvas {
 }
 .contact p{
     line-height: 1.5;
-    font-size: 0.9rem;
+    font-size: 1.1vw;
 }
 
 

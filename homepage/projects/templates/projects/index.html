@@ -104,7 +104,7 @@
                         {% for p in object_list %}
                             {% if p.project_date.year == y %}
                         <td onclick="window.location='{% url 'projects:detail' p.id %}'">
-                            <div class="proj">
+                            <div class="proj circle">
                                 <div class="desc">
                                     <div class="desc-title">
                                         <a href="{% url 'projects:detail' p.id %}">{{ p.project_title }}</a>
