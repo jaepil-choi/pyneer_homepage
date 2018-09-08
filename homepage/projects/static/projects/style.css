@@ -75,8 +75,6 @@ input{
 .header-menu-mobile{
     display: none;
 }
-
-
 .header-logo{
     position: relative;
     left: 4%;
@@ -93,7 +91,6 @@ input{
     display: block;
     float: left;
 }
-
 .header-menu{
     position: fixed;
     top: 10px;
@@ -137,6 +134,8 @@ input{
     padding-top: 0;
 }
 .section.intro .container {
+    max-width: 900px;
+    width: 70%;
     position: relative;
     top: 20%;
     left: 8%;
@@ -394,7 +393,7 @@ canvas {
     left: calc(70% + 50px);
 }
 .page-project .project-ty__member{
-    width: 350px;
+    max-width: 270px;
     font-weight: 700;
     position: relative;
     float: right;
