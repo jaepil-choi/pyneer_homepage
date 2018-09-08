@@ -143,20 +143,20 @@ input{
     z-index: 999; 
 }
 .section.intro .title-skku{
-    font-size: 3.2em;
+    font-size: 3.1em;
     font-weight: 600;
     color: #333;
     line-height: 1.2;
 }
 .section.intro .title-pyneer{
-    font-size: 3.2em;
+    font-size: 3.1em;
     font-weight: 600;
     color: #333;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 .section.intro p{
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
 canvas {
     background: white;
@@ -181,7 +181,7 @@ canvas {
 }
 .section.about h2{
     position: relative;
-    font-size: 2.4em;
+    font-size: 2.3em;
     color: #333;
     width: 170px;
 }
@@ -201,7 +201,7 @@ canvas {
 }
 .section.about .part-title{
     color: #333;
-    font-size: 2.0em;
+    font-size: 1.8em;
     position: relative;
     margin-bottom: 20px;
 }
@@ -213,7 +213,7 @@ canvas {
     position: relative;
     max-width: 69%;
     line-height: 1.4;
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: #4d5256;
 }
 
@@ -362,29 +362,33 @@ canvas {
 
 
 /* detail.html */
+.header-logo img{
+    padding-top: 10px;
+    width: 140px;
+ }
 .page-container{
-    margin: 100px 180px;
+    margin: 100px 80px;
 }
 .page-project .project-ty{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
+.page-project span.border{
+    width: 40px;
+    border: 2.5px solid #000000;
+}
 .page-project .project-ty__title{
     max-width: 650px;
     width: 350px;
-    font-size: 1.5rem;
+    font-size: 1.2em;
     font-weight: 700;
     height: auto;
-}
-.page-project .project-ty__title h2{
-    border-top: 5px solid #000;
-    display: inline-block;
 }
 .page-project .project-ty__year{
     width: 350px;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.2em;
     position: relative;
     float: right;
     left: calc(70% + 50px);
@@ -395,20 +399,20 @@ canvas {
     position: relative;
     float: right;
     left: calc(70% + 50px);
-    font-size: 1.5rem;
+    font-size: 1.2em;
     vertical-align: top;
 }
 .page-project .project-info{
     max-width: 900px;
-    width: calc(100% - 350px);
+    width: calc(100% - 450px);
     margin-bottom: 50px;
-    margin-top: 90px;
+    margin-top: 50px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 .page-project .project-info .project-info__desc p{
-    font-size: 1.4rem;
+    font-size: 1.1em;
 }
 .page-project .project-images img{
     width: 500px;
